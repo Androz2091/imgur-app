@@ -1,3 +1,4 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:oauth2_client/access_token_response.dart';
@@ -36,8 +37,8 @@ class _RootPageState extends State<RootPage> {
     );
 
     AccessTokenResponse tknResp = await client.getTokenWithAuthCodeFlow(
-    clientId: '9b274a072d497fd',
-    clientSecret: 'eabfe02dddfb8156576beb121ae7f87ff34d9ec4').catchError((e) {
+    clientId: env['CLIENT_ID'],
+    clientSecret: env['CLIENT_SECRET']).catchError((e) {
       setState(() {
         failed = true;
       });
