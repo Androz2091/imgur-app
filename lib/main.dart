@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login.dart';
-import 'auth.dart';
+import 'root.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,10 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
-      routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => LoginPage(),
-        '/imgur-auth': (BuildContext context) => AuthPage()
-      }
+      home: RootPage()
     );
   }
 }
